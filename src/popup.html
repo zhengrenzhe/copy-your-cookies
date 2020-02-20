@@ -23,15 +23,15 @@
         <input type="text" class="add" placeholder="增加一个IP或者域名，回车确定" data-type="target">
     </section>
     <section>
-        <div>增加一个IP或者域名增加一个IP或者域名增加一个IP或者域名</div>
+        <div id="state">增加一个IP或者域名增加一个IP或者域名增加一个IP或者域名</div>
     </section>
 </main>
 </body>
 
 <script type="template" id="item-tpl">
     <li id="{{value}}">
-        <label for="{{item_id}}">
-            <input type="radio" name="{{group_name}}" id="{{item_id}}">
+        <label for="input-{{item_id}}">
+            <input type="radio" name="{{group_name}}" id="input-{{item_id}}" data-value="{{value}}" {{checked}}>
             <span class="address">{{value}}</span>
             <span class="remove" data-id="{{value}}" data-type="{{group_name}}">❌</span>
         </label>

@@ -1,5 +1,5 @@
-import { appendAddress, getAddresses, removeAddress } from "./dataStore";
-import { addListItem, removeListItem } from "./ui";
+import { appendAddress, getAddresses, getSelected, removeAddress, updateSelected } from "./dataStore";
+import { addListItem, removeListItem, updateState } from "./ui";
 
 document.querySelectorAll<HTMLInputElement>(".add").forEach(ele => {
     ele.addEventListener<"keydown">("keydown", function ({ key }) {
@@ -26,14 +26,30 @@ document.body.addEventListener("click", ({ target }) => {
         const type = (<HTMLSpanElement> target).getAttribute("data-type")!;
         removeListItem(id);
         removeAddress(id, type);
+        updateSelected(null, type);
+        updateState(getSelected("source"), getSelected("target"));
     }
 });
 
+document.body.addEventListener("change", ({ target }) => {
+    if ((<HTMLInputElement> target).type === "radio") {
+        const id = (<HTMLSpanElement> target).getAttribute("data-value")!;
+        const type = (<HTMLSpanElement> target).getAttribute("name")!;
+        updateSelected(id, type);
+        updateState(getSelected("source"), getSelected("target"));
+    }
+});
+
+const sourceSelected = getSelected("source");
+const targetSelected = getSelected("target");
+
 
 getAddresses("source").forEach(address => {
-    addListItem(address, "source");
+    addListItem(address, "source", address === sourceSelected);
 });
 
 getAddresses("target").forEach(address => {
-    addListItem(address, "target");
+    addListItem(address, "target", address === targetSelected);
 });
+
+updateState(sourceSelected, targetSelected);

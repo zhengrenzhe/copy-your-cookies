@@ -1,0 +1,26 @@
+{
+  "name": "copy-your-cookies",
+  "version": "1.0.0",
+  "description": "chrome extension for copy your cookie to another domain when sending http request",
+  "main": "index.js",
+  "scripts": {
+    "build": "make build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhengrenzhe/copy-your-cookies.git"
+  },
+  "author": "zhengrenzhe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhengrenzhe/copy-your-cookies/issues"
+  },
+  "homepage": "https://github.com/zhengrenzhe/copy-your-cookies#readme",
+  "devDependencies": {
+    "@types/chrome": "^0.0.96",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

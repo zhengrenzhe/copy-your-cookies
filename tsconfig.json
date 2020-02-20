@@ -1,15 +1,21 @@
 {
-    "compilerOptions": {
-    	"module": "esnext",
-    	"moduleResolution": "node",
-        "target": "es6",
-        "noImplicitAny": true,
-        "sourceMap": false,
-        "rootDir": "src",
-        "outDir": "dist",
-        "noEmitOnError": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "typeRoots": [ "node_modules/@types" ]
-    }
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es6",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmitOnError": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "lib": [
+      "ES7",
+      "DOM"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
 }

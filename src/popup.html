@@ -12,7 +12,30 @@
 </head>
 <body>
 <main>
-
+    <section>
+        <h2>选择Cookies来源IP或域名</h2>
+        <ul id="source"></ul>
+        <input type="text" class="add" placeholder="增加一个IP或者域名，回车确定" data-type="source">
+    </section>
+    <section>
+        <h2>选择Cookies复制目标</h2>
+        <ul id="target"></ul>
+        <input type="text" class="add" placeholder="增加一个IP或者域名，回车确定" data-type="target">
+    </section>
+    <section>
+        <div>增加一个IP或者域名增加一个IP或者域名增加一个IP或者域名</div>
+    </section>
 </main>
 </body>
+
+<script type="template" id="item-tpl">
+    <li id="{{value}}">
+        <label for="{{item_id}}">
+            <input type="radio" name="{{group_name}}" id="{{item_id}}">
+            <span class="address">{{value}}</span>
+            <span class="remove" data-id="{{value}}" data-type="{{group_name}}">❌</span>
+        </label>
+    </li>
+</script>
+<script src="popup.js"></script>
 </html>

@@ -1,3 +1,6 @@
+import { appendAddress, getAddresses, removeAddress } from "./dataStore";
+import { addListItem, removeListItem } from "./ui";
+
 document.querySelectorAll<HTMLInputElement>(".add").forEach(ele => {
     ele.addEventListener<"keydown">("keydown", function ({ key }) {
         if (key !== "Enter") return;
@@ -26,48 +29,11 @@ document.body.addEventListener("click", ({ target }) => {
     }
 });
 
-function removeListItem(address: string) {
-    const ele = document.getElementById(address);
-    ele?.remove();
-}
 
-function addListItem(address: string, target_type: string) {
-    const tpl = document.getElementById("item-tpl")!.innerHTML;
-    const htmlString = tpl
-        .replace(/{{item_id}}/g, address)
-        .replace(/{{value}}/g, address)
-        .replace(/{{group_name}}/g, target_type);
-    document.getElementById(target_type)!.innerHTML = document.getElementById(target_type)!.innerHTML + htmlString;
-}
+getAddresses("source").forEach(address => {
+    addListItem(address, "source");
+});
 
-function appendAddress(address: string, target_type: string) {
-    const data = getAddresses(target_type);
-    if (data.includes(address) || address.length === 0) return false;
-    data.push(address);
-    localStorage.setItem(target_type, JSON.stringify(data));
-    return true;
-}
-
-function removeAddress(address: string, target_type: string) {
-    const data = getAddresses(target_type);
-    const index = data.findIndex(addr => addr === address);
-    if (index !== -1) data.splice(index, 1);
-    localStorage.setItem(target_type, JSON.stringify(data));
-}
-
-function getAddresses(target_type: string): string[] {
-    try {
-        return JSON.parse(localStorage.getItem(target_type)! || "[]");
-    } catch (_) {
-        return [];
-    }
-}
-
-(() => {
-    getAddresses("source").forEach(address => {
-        addListItem(address, "source");
-    });
-    getAddresses("target").forEach(address => {
-        addListItem(address, "target");
-    });
-})();
+getAddresses("target").forEach(address => {
+    addListItem(address, "target");
+});

@@ -1,16 +1,49 @@
 dependencies:
   node-sass: 4.13.1
+  rollup: 1.31.1
 devDependencies:
+  '@rollup/plugin-typescript': 3.0.0_8d13472b527beb74a8383b26403ff925
   '@types/chrome': 0.0.96
+  tslib: 1.10.0
   typescript: 3.7.5
 lockfileVersion: 5.1
 packages:
+  /@rollup/plugin-typescript/3.0.0_8d13472b527beb74a8383b26403ff925:
+    dependencies:
+      '@rollup/pluginutils': 3.0.8_rollup@1.31.1
+      resolve: 1.15.1
+      rollup: 1.31.1
+      tslib: 1.10.0
+      typescript: 3.7.5
+    dev: true
+    engines:
+      node: '>=8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0
+      tslib: '*'
+      typescript: '>=2.1.0'
+    resolution:
+      integrity: sha512-O6915Ril3+Q0B4P898PULAcPFZfPuatEB/4nox7bnK48ekGrmamMYhMB5tOqWjihEWrw4oz/NL+c+/kS3Fk95g==
+  /@rollup/pluginutils/3.0.8_rollup@1.31.1:
+    dependencies:
+      estree-walker: 1.0.1
+      rollup: 1.31.1
+    dev: true
+    engines:
+      node: '>= 8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0
+    resolution:
+      integrity: sha512-rYGeAc4sxcZ+kPG/Tw4/fwJODC3IXHYDH4qusdN/b6aLw5LPUbzpecYbEJh4sVQGPFJxd2dBU4kc1H3oy9/bnw==
   /@types/chrome/0.0.96:
     dependencies:
       '@types/filesystem': 0.0.29
     dev: true
     resolution:
       integrity: sha512-0b5H9CoFnBe1yGrC/wVS+zYFR8M8iaIPcR11BeHJvqDiP344DW6F/5sEBIGFyKl++CWVcvhx+7JQVUIjGWSN5w==
+  /@types/estree/0.0.42:
+    resolution:
+      integrity: sha512-K1DPVvnBCPxzD+G51/cxVIoc2X8uUVl1zpJeE6iKcgHMj4+tbat5Xu4TjV7v2QSDbIeAfLi2hIk+u2+s0MlpUQ==
   /@types/filesystem/0.0.29:
     dependencies:
       '@types/filewriter': 0.0.28
@@ -21,10 +54,19 @@ packages:
     dev: true
     resolution:
       integrity: sha1-wFTor02d11205jq8dviFFocU1LM=
+  /@types/node/13.7.4:
+    resolution:
+      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
   /abbrev/1.1.1:
     dev: false
     resolution:
       integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
+  /acorn/7.1.0:
+    engines:
+      node: '>=0.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-kL5CuoXA/dgxlBbVrflsflzQ3PAas7RYZB52NOm/6839iVYJgKMJ3cQJD+t2i5+qFa8h3MDpEOJiS64E8JLnSQ==
   /ajv/6.11.0:
     dependencies:
       fast-deep-equal: 3.1.1
@@ -251,6 +293,10 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+  /estree-walker/1.0.1:
+    dev: true
+    resolution:
+      integrity: sha512-1fMXF3YP4pZZVozF8j/ZLfvnR8NSIljt56UhbZ5PeeDmmGHpgpdwQt7ITlGvYaQukCvuBRMLEiKiYC+oeIg4cg==
   /extend/3.0.2:
     dev: false
     resolution:
@@ -755,7 +801,6 @@ packages:
     resolution:
       integrity: sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
   /path-parse/1.0.6:
-    dev: false
     resolution:
       integrity: sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
   /path-type/1.1.0:
@@ -905,7 +950,6 @@ packages:
   /resolve/1.15.1:
     dependencies:
       path-parse: 1.0.6
-    dev: false
     resolution:
       integrity: sha512-84oo6ZTtoTUpjgNEr5SJyzQhzL72gaRodsSfyxC/AXRvwu0Yse9H8eF9IpGo7b8YetZhlI6v7ZQ6bKBFV/6S7w==
   /rimraf/2.7.1:
@@ -915,6 +959,14 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
+  /rollup/1.31.1:
+    dependencies:
+      '@types/estree': 0.0.42
+      '@types/node': 13.7.4
+      acorn: 7.1.0
+    hasBin: true
+    resolution:
+      integrity: sha512-2JREN1YdrS/kpPzEd33ZjtuNbOuBC3ePfuZBdKEybvqcEcszW1ckyVqzcEiEe0nE8sqHK+pbJg+PsAgRJ8+1dg==
   /safe-buffer/5.1.2:
     dev: false
     resolution:
@@ -1091,6 +1143,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-m6s2OdQe5wgpFMC+pAJ+q9djG82O2jcHPOI6RNg1yy9rCYR+WD6Nbpl32fDpfC56nirdRy+opFa/Vk7HYhqaew==
+  /tslib/1.10.0:
+    dev: true
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.2.0
@@ -1203,6 +1259,9 @@ packages:
     resolution:
       integrity: sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=
 specifiers:
+  '@rollup/plugin-typescript': ^3.0.0
   '@types/chrome': ^0.0.96
   node-sass: ^4.13.1
+  rollup: ^1.31.1
+  tslib: ^1.10.0
   typescript: ^3.7.5

@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/zhengrenzhe/copy-your-cookies#readme",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^3.0.0",
     "@types/chrome": "^0.0.96",
+    "tslib": "^1.10.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "rollup": "^1.31.1"
   }
 }

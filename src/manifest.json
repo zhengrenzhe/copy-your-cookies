@@ -1,10 +1,12 @@
 {
   "name": "Copy Your Cookies",
-  "version": "1.0",
+  "version": "0.9",
   "description": "Copy your cookies to another domain when sending http request",
   "manifest_version": 2,
   "background": {
-    "scripts": ["background.js"],
+    "scripts": [
+      "background.js"
+    ],
     "persistent": true
   },
   "browser_action": {

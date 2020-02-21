@@ -30,8 +30,11 @@
 
 <script type="template" id="item-tpl">
     <li id="{{value}}">
-        <label for="input-{{item_id}}">
-            <input type="radio" name="{{group_name}}" id="input-{{item_id}}" data-value="{{value}}" {{checked}}>
+        <label for="input-{{group_name}}-{{item_id}}">
+            <input
+                    type="radio" name="{{group_name}}" id="input-{{group_name}}-{{item_id}}" data-value="{{value}}"
+                    {{checked}}
+            >
             <span class="address">{{value}}</span>
             <span class="remove" data-id="{{value}}" data-type="{{group_name}}">❌</span>
         </label>

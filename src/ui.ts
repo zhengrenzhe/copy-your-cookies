@@ -15,9 +15,9 @@ function addListItem(address: string, target_type: string, selected = false) {
 
 function updateState(source: string | null, target: string | null) {
     if (source && target) {
-        document.getElementById("state")!.innerHTML = `(°∀°)ﾉ ${ target } 发送的请求会携带 ${ source } 相同API的Cookies`;
+        document.getElementById("state")!.innerHTML = `<span style="color: #34a853">(°∀°)ﾉ ${ target } 发送的请求会携带 ${ source } 的Cookies</span>`;
     } else {
-        document.getElementById("state")!.innerHTML = `ヽ(\`Д´)ﾉ 缺少Cookies来源选项或目标选项`;
+        document.getElementById("state")!.innerHTML = `<span style="color: #fb0469">ヽ(\`Д´)ﾉ 缺少Cookies来源选项或目标选项</span>`;
     }
 }
 

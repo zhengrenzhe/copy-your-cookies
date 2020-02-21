@@ -13,14 +13,16 @@
 <body>
 <main>
     <section>
-        <h2>选择Cookies来源IP或域名</h2>
+        <h2>选择Cookies来源域</h2>
         <ul id="source"></ul>
-        <input type="text" class="add" placeholder="增加一个IP或者域名，回车确定" data-type="source">
+        <input type="text" class="add" placeholder="回车确定" data-type="source">
+        <div class="info">不正确的域会导致请求无法正确携带目标域的Cookie，合法示例: baidu.com或192.168.1.1</div>
     </section>
     <section>
-        <h2>选择Cookies复制目标</h2>
+        <h2>选择要携带目标Cookie的域</h2>
         <ul id="target"></ul>
-        <input type="text" class="add" placeholder="增加一个IP或者域名，回车确定" data-type="target">
+        <input type="text" class="add" placeholder="回车确定" data-type="target">
+        <div class="info">不正确的域会导致请求无法正确携带目标域的Cookie，合法示例: baidu.com或192.168.1.1</div>
     </section>
     <section>
         <div id="state">增加一个IP或者域名增加一个IP或者域名增加一个IP或者域名</div>

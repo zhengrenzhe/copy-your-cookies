@@ -9,6 +9,13 @@
     ],
     "persistent": true
   },
+  "permissions": [
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
+  ],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {

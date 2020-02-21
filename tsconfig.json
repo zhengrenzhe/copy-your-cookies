@@ -12,7 +12,8 @@
     "strictNullChecks": true,
     "lib": [
       "ES7",
-      "DOM"
+      "DOM",
+      "ES2017"
     ],
     "typeRoots": [
       "node_modules/@types"

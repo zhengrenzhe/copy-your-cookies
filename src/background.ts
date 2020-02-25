@@ -3,7 +3,7 @@ import { getSelected } from "./dataStore";
 function getCookies(domain: string): Promise<string> {
     return new Promise<string>(resolve => {
         chrome.cookies.getAll({ domain }, cookies => {
-            resolve(Object.values(cookies).map(c => `${ c.name }:${ c.value }`).join(";"));
+            resolve(Object.values(cookies).map(c => `${ c.name }=${ c.value }`).join(";"));
         });
     });
 }
@@ -18,6 +18,7 @@ function getCookies(domain: string): Promise<string> {
             name: "Cookie",
             value: cookies,
         });
+        return { requestHeaders: details.requestHeaders };
         console.log(`%cRequest ${ details.url } has been with cookie: ${ cookies }`, "color: green;");
     }
 

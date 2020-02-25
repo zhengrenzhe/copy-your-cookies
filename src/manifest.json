@@ -1,6 +1,6 @@
 {
   "name": "Copy Your Cookies",
-  "version": "0.9",
+  "version": "1.0",
   "description": "Copy your cookies to another domain when sending http request",
   "manifest_version": 2,
   "background": {
